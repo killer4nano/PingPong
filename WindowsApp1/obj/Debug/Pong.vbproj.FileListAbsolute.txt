@@ -1,0 +1,14 @@
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\obj\Debug\Pong.vbprojResolveAssemblyReference.cache
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.frmCreate.resources
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.frmJoin.resources
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.HomeScreen.resources
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\obj\Debug\Pong.vbproj.GenerateResource.Cache
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\obj\Debug\Pong.vbproj.CoreCompileInputs.cache
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\kille\source\repos\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.pdb
