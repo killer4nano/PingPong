@@ -32,9 +32,9 @@ Public Class frmCreate
         Control.CheckForIllegalCrossThreadCalls = False
     End Sub
     Private Sub frmCreate_KeyPress(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        If e.KeyCode = Keys.Down Then
+        If e.KeyCode = Keys.Down And Not (objPlayer1.Top > Me.MaximumSize.Height - 130) Then
             objPlayer1.Top += 15
-        ElseIf e.KeyCode = Keys.Up Then
+        ElseIf e.KeyCode = Keys.Up And Not (objPlayer1.Top < 10) Then
             objPlayer1.Top -= 15
         End If
     End Sub
