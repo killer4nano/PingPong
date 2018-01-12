@@ -11,11 +11,12 @@ Public Class frmJoin
     Dim ballXVelocity As Integer
     Dim ballVelocity As Integer
     Dim otherPlayersTop As Integer
+    Dim player1Points As Integer = 0
+    Dim player2Points As Integer = 0
     Private Sub frmJoin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Control.CheckForIllegalCrossThreadCalls = False
         Dim hostIp As String
         hostIp = InputBox("What is the host IP?", "Connection", "")
-        lblIp.Text = "Host IP : " + hostIp
         connection = New TcpClient
         connection.Connect(hostIp, 49552)
         bw = New IO.BinaryWriter(connection.GetStream())

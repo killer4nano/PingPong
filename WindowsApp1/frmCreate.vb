@@ -20,6 +20,9 @@ Public Class frmCreate
     Dim ballSpeedCounter As Integer = 0
     Dim xSpeedMultPlayer1 As Integer = 1
     Dim xSpeedMultPlayer2 As Integer = 1
+    Dim player1Points As Integer = 0
+    Dim player2Points As Integer = 0
+
     Private Sub frmCreate_Loaded(sender As Object, e As EventArgs) Handles MyBase.Shown
 
         Dim host As String = System.Net.Dns.GetHostName()

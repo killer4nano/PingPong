@@ -22,19 +22,10 @@ Partial Class frmJoin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.lblIp = New System.Windows.Forms.Label()
         Me.objPlayer1 = New System.Windows.Forms.Label()
         Me.objPlayer2 = New System.Windows.Forms.Label()
         Me.objBall = New System.Windows.Forms.Label()
         Me.SuspendLayout()
-        '
-        'lblIp
-        '
-        Me.lblIp.AutoSize = True
-        Me.lblIp.Location = New System.Drawing.Point(106, 22)
-        Me.lblIp.Name = "lblIp"
-        Me.lblIp.Size = New System.Drawing.Size(0, 13)
-        Me.lblIp.TabIndex = 0
         '
         'objPlayer1
         '
@@ -70,17 +61,13 @@ Partial Class frmJoin
         Me.Controls.Add(Me.objBall)
         Me.Controls.Add(Me.objPlayer2)
         Me.Controls.Add(Me.objPlayer1)
-        Me.Controls.Add(Me.lblIp)
         Me.MaximumSize = New System.Drawing.Size(734, 516)
         Me.MinimumSize = New System.Drawing.Size(734, 516)
         Me.Name = "frmJoin"
         Me.Text = "Player 2 : Ping Pong"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lblIp As Label
     Friend WithEvents objPlayer1 As Label
     Friend WithEvents objPlayer2 As Label
     Friend WithEvents objBall As Label
