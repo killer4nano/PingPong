@@ -18,6 +18,8 @@ Public Class frmCreate
     Dim ballXVelocity As Integer
     Dim ballYVelocity As Integer
     Dim ballSpeedCounter As Integer = 0
+    Dim xSpeedMultPlayer1 As Integer = 1
+    Dim xSpeedMultPlayer2 As Integer = 1
     Private Sub frmCreate_Loaded(sender As Object, e As EventArgs) Handles MyBase.Shown
 
         Dim host As String = System.Net.Dns.GetHostName()
@@ -36,6 +38,10 @@ Public Class frmCreate
         Control.CheckForIllegalCrossThreadCalls = False
     End Sub
     Private Sub frmCreate_KeyPress(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Space And objBall.Bounds.IntersectsWith(objPlayer1.Bounds) Then
+            ballYVelocity = (ballYVelocity * 2) * -1
+            xSpeedMultPlayer1 += 1
+        End If
         If e.KeyCode = Keys.Down And Not (objPlayer1.Top > Me.MaximumSize.Height - 130) Then
             objPlayer1.Top += 15
         ElseIf e.KeyCode = Keys.Up And Not (objPlayer1.Top < 10) Then
@@ -57,6 +63,9 @@ Public Class frmCreate
             message = br.ReadString()
             If message = "P" Then
                 otherPlayersTop = br.ReadUInt16
+            ElseIf message = "H" And objBall.Bounds.IntersectsWith(objPlayer2.Bounds) Then
+                ballYVelocity = (ballYVelocity * 2) * -1
+                xSpeedMultPlayer2 += 1
             End If
         Loop
     End Sub
@@ -69,10 +78,10 @@ Public Class frmCreate
                 ballSpeedCounter = 0
             End If
             If objBall.Bounds.IntersectsWith(objPlayer2.Bounds) Then
-                ballXVelocity = -2
+                ballXVelocity = -2 * xSpeedMultPlayer2
             End If
             If objBall.Bounds.IntersectsWith(objPlayer1.Bounds) Then
-                ballXVelocity = 2
+                ballXVelocity = 2 * xSpeedMultPlayer1
             End If
             If objBall.Left > Me.Bounds.Width - 30 Or objBall.Left < 0 Then
                 If objBall.Left > Me.Bounds.Width - 30 Then
@@ -82,10 +91,8 @@ Public Class frmCreate
                 End If
 
             End If
-            If objBall.Top > Me.Bounds.Height - 50 Then
-                ballYVelocity = -1
-            ElseIf objBall.Top < 0 Then
-                ballYVelocity = 1
+            If objBall.Top > Me.Bounds.Height - 50 Or objBall.Top < 0 Then
+                ballYVelocity = ballYVelocity * -1
             End If
             ballSpeedCounter += 1
             sendPosition()

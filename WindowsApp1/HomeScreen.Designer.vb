@@ -52,7 +52,7 @@ Partial Class HomeScreen
         Me.Controls.Add(Me.btnJoin)
         Me.Controls.Add(Me.btnCreate)
         Me.Name = "HomeScreen"
-        Me.Text = "Form1"
+        Me.Text = "Ping Pong"
         Me.ResumeLayout(False)
 
     End Sub

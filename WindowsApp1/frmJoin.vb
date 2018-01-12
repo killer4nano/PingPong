@@ -27,6 +27,9 @@ Public Class frmJoin
         receivingData.Start()
     End Sub
     Private Sub frmJoin_KeyPress(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Space And objBall.Bounds.IntersectsWith(objPlayer2.Bounds) Then
+            bw.Write("H")
+        End If
         If e.KeyCode = Keys.Down And Not (objPlayer2.Top > Me.MaximumSize.Height - 130) Then
             objPlayer2.Top += 15
         ElseIf e.KeyCode = Keys.Up And Not (objPlayer2.Top < 10) Then
