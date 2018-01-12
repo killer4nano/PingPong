@@ -13,6 +13,7 @@ Public Class frmJoin
     Dim otherPlayersTop As Integer
     Dim player1Points As Integer = 0
     Dim player2Points As Integer = 0
+    Dim pause As Boolean = True
     Private Sub frmJoin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Control.CheckForIllegalCrossThreadCalls = False
         Dim hostIp As String
@@ -22,8 +23,6 @@ Public Class frmJoin
         bw = New IO.BinaryWriter(connection.GetStream())
         br = New IO.BinaryReader(connection.GetStream())
         otherPlayersTop = objPlayer1.Top
-        render = New Thread(AddressOf renderG)
-        render.Start()
         receivingData = New Thread(AddressOf receivePosition)
         receivingData.Start()
     End Sub
@@ -52,6 +51,19 @@ Public Class frmJoin
                 objBall.Top = br.ReadUInt16
             ElseIf message = "BL" Then
                 objBall.Left = br.ReadUInt16
+            ElseIf message = "I" Or message = "U" Then
+                btnReady.Visible = True
+                render.Abort()
+                resetPosition()
+                If message = "I" Then
+                    player1Points += 1
+                Else
+                    player2Points += 1
+                End If
+                updatePointsUI()
+                pauseAndWaitForReady()
+            ElseIf message = "HI" Then
+                pauseAndWaitForReady()
             End If
         Loop
     End Sub
@@ -63,9 +75,29 @@ Public Class frmJoin
             objBall.SetBounds(objBall.Left, objBall.Top, 13, 14)
         Loop
     End Sub
+    Private Sub updatePointsUI()
+        lblPlayer1Score.Text = player1Points
+        lblPlayer2Score.text = player2Points
+    End Sub
+    Private Sub resetPosition()
+        objPlayer2.SetBounds(742, 201, 15, 69)
+        objPlayer1.SetBounds(6, 201, 15, 69)
+        objBall.SetBounds(367, 230, 13, 14)
+    End Sub
+    Private Sub pauseAndWaitForReady()
+        Dim message As String
+        Do While Not (message = "GO")
+            message = br.ReadString
+        Loop
+        Do While btnReady.Visible = True
 
-    Private Sub frmJoin_Loaded(sender As Object, e As EventArgs) Handles MyBase.Shown
-
+        Loop
+        render = New Thread(AddressOf renderG)
+        render.Start()
     End Sub
 
+    Private Sub btnReady_Click(sender As Object, e As EventArgs) Handles btnReady.Click
+        btnReady.Visible = False
+        bw.Write("GO")
+    End Sub
 End Class

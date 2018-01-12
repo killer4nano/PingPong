@@ -22,6 +22,7 @@ Public Class frmCreate
     Dim xSpeedMultPlayer2 As Integer = 1
     Dim player1Points As Integer = 0
     Dim player2Points As Integer = 0
+    Dim pause As Boolean = True
 
     Private Sub frmCreate_Loaded(sender As Object, e As EventArgs) Handles MyBase.Shown
 
@@ -69,6 +70,8 @@ Public Class frmCreate
             ElseIf message = "H" And objBall.Bounds.IntersectsWith(objPlayer2.Bounds) Then
                 ballYVelocity = (ballYVelocity * 2) * -1
                 xSpeedMultPlayer2 += 1
+            ElseIf message = "GO" Then
+                pause = False
             End If
         Loop
     End Sub
@@ -86,19 +89,46 @@ Public Class frmCreate
             If objBall.Bounds.IntersectsWith(objPlayer1.Bounds) Then
                 ballXVelocity = 2 * xSpeedMultPlayer1
             End If
-            If objBall.Left > Me.Bounds.Width - 30 Or objBall.Left < 0 Then
-                If objBall.Left > Me.Bounds.Width - 30 Then
-                    MsgBox("Player 1 Wins")
+            If objBall.Left > playGround.Bounds.Width - 30 Or objBall.Left < 0 Then
+                If objBall.Left > playGround.Bounds.Width - 30 Then
+                    player1Points += 1
+                    bw.Write("I")
+                    updatePointsUI()
+                    resetPosition()
+                    btnReady.Visible = True
+                    pause = True
+                    pauseAndWaitForReady()
                 Else
-                    MsgBox("Player 2 Wins")
+                    bw.Write("U")
+                    player2Points += 1
+                    updatePointsUI()
+                    resetPosition()
+                    btnReady.Visible = True
+                    pause = True
+                    pauseAndWaitForReady()
                 End If
 
             End If
-            If objBall.Top > Me.Bounds.Height - 50 Or objBall.Top < 0 Then
+            If objBall.Top > playGround.Bounds.Height - 50 Or objBall.Top < 0 Then
                 ballYVelocity = ballYVelocity * -1
             End If
             ballSpeedCounter += 1
             sendPosition()
+
+        Loop
+    End Sub
+
+    Private Sub updatePointsUI()
+        lblPlayer1Score.Text = player1Points
+        lblPlayer2Score.text = player2Points
+    End Sub
+    Private Sub resetPosition()
+        objPlayer2.SetBounds(742, 201, 15, 69)
+        objPlayer1.SetBounds(6, 201, 15, 69)
+        objBall.SetBounds(367, 230, 13, 14)
+    End Sub
+    Private Sub pauseAndWaitForReady()
+        Do While pause = True Or btnReady.Visible = True
 
         Loop
     End Sub
@@ -109,11 +139,16 @@ Public Class frmCreate
         connection = listener.AcceptTcpClient()
         bw = New IO.BinaryWriter(connection.GetStream())
         br = New IO.BinaryReader(connection.GetStream())
-        render = New Thread(AddressOf renderG)
-        render.Start()
         receivingData = New Thread(AddressOf receivePosition)
         receivingData.Start()
+        bw.Write("HI")
+        pauseAndWaitForReady()
+        render = New Thread(AddressOf renderG)
+        render.Start()
     End Sub
 
-
+    Private Sub btnReady_Click(sender As Object, e As EventArgs) Handles btnReady.Click
+        bw.Write("GO")
+        btnReady.Visible = False
+    End Sub
 End Class
