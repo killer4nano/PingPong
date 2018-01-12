@@ -25,6 +25,7 @@ Partial Class frmJoin
         Me.lblIp = New System.Windows.Forms.Label()
         Me.objPlayer1 = New System.Windows.Forms.Label()
         Me.objPlayer2 = New System.Windows.Forms.Label()
+        Me.objBall = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblIp
@@ -38,7 +39,7 @@ Partial Class frmJoin
         'objPlayer1
         '
         Me.objPlayer1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.objPlayer1.Location = New System.Drawing.Point(12, 159)
+        Me.objPlayer1.Location = New System.Drawing.Point(12, 204)
         Me.objPlayer1.Name = "objPlayer1"
         Me.objPlayer1.Size = New System.Drawing.Size(15, 69)
         Me.objPlayer1.TabIndex = 1
@@ -47,17 +48,26 @@ Partial Class frmJoin
         'objPlayer2
         '
         Me.objPlayer2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.objPlayer2.Location = New System.Drawing.Point(691, 159)
+        Me.objPlayer2.Location = New System.Drawing.Point(691, 204)
         Me.objPlayer2.Name = "objPlayer2"
         Me.objPlayer2.Size = New System.Drawing.Size(15, 69)
         Me.objPlayer2.TabIndex = 2
         Me.objPlayer2.Text = "Label2"
+        '
+        'objBall
+        '
+        Me.objBall.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.objBall.Location = New System.Drawing.Point(353, 231)
+        Me.objBall.Name = "objBall"
+        Me.objBall.Size = New System.Drawing.Size(13, 14)
+        Me.objBall.TabIndex = 6
         '
         'frmJoin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(718, 477)
+        Me.Controls.Add(Me.objBall)
         Me.Controls.Add(Me.objPlayer2)
         Me.Controls.Add(Me.objPlayer1)
         Me.Controls.Add(Me.lblIp)
@@ -73,4 +83,5 @@ Partial Class frmJoin
     Friend WithEvents lblIp As Label
     Friend WithEvents objPlayer1 As Label
     Friend WithEvents objPlayer2 As Label
+    Friend WithEvents objBall As Label
 End Class

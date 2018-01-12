@@ -24,6 +24,7 @@ Partial Class frmCreate
     Private Sub InitializeComponent()
         Me.objPlayer2 = New System.Windows.Forms.Label()
         Me.objPlayer1 = New System.Windows.Forms.Label()
+        Me.objBall = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'objPlayer2
@@ -44,11 +45,20 @@ Partial Class frmCreate
         Me.objPlayer1.TabIndex = 3
         Me.objPlayer1.Text = "Label1"
         '
+        'objBall
+        '
+        Me.objBall.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.objBall.Location = New System.Drawing.Point(353, 231)
+        Me.objBall.Name = "objBall"
+        Me.objBall.Size = New System.Drawing.Size(13, 14)
+        Me.objBall.TabIndex = 5
+        '
         'frmCreate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(718, 477)
+        Me.Controls.Add(Me.objBall)
         Me.Controls.Add(Me.objPlayer2)
         Me.Controls.Add(Me.objPlayer1)
         Me.MaximumSize = New System.Drawing.Size(734, 516)
@@ -61,4 +71,5 @@ Partial Class frmCreate
 
     Friend WithEvents objPlayer2 As Label
     Friend WithEvents objPlayer1 As Label
+    Friend WithEvents objBall As Label
 End Class

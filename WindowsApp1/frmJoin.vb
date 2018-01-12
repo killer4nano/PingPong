@@ -9,7 +9,8 @@ Public Class frmJoin
     Private sendingData As Thread
     Private receivingData As Thread
     Private render As Thread
-
+    Dim ballXVelocity As Integer
+    Dim ballVelocity As Integer
     Dim otherPlayersTop As Integer
     Private Sub frmJoin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Control.CheckForIllegalCrossThreadCalls = False
@@ -29,9 +30,9 @@ Public Class frmJoin
         receivingData.Start()
     End Sub
     Private Sub frmJoin_KeyPress(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        If e.KeyCode = Keys.Down Then
+        If e.KeyCode = Keys.Down And Not (objPlayer2.Top > Me.MaximumSize.Height - 130) Then
             objPlayer2.Top += 15
-        ElseIf e.KeyCode = Keys.Up Then
+        ElseIf e.KeyCode = Keys.Up And Not (objPlayer2.Top < 10) Then
             objPlayer2.Top -= 15
         End If
     End Sub
