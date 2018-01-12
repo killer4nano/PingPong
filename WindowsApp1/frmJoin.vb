@@ -6,7 +6,6 @@ Public Class frmJoin
     Dim connection As TcpClient
     Dim bw As IO.BinaryWriter
     Dim br As IO.BinaryReader
-    Private sendingData As Thread
     Private receivingData As Thread
     Private render As Thread
     Dim ballXVelocity As Integer
@@ -24,9 +23,7 @@ Public Class frmJoin
         otherPlayersTop = objPlayer1.Top
         render = New Thread(AddressOf renderG)
         render.Start()
-        sendingData = New Thread(AddressOf sendPosition)
         receivingData = New Thread(AddressOf receivePosition)
-        sendingData.Start()
         receivingData.Start()
     End Sub
     Private Sub frmJoin_KeyPress(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
@@ -35,12 +32,11 @@ Public Class frmJoin
         ElseIf e.KeyCode = Keys.Up And Not (objPlayer2.Top < 10) Then
             objPlayer2.Top -= 15
         End If
+        sendPosition()
     End Sub
     Private Sub sendPosition()
-        Do While True
-            bw.Write("P")
-            bw.Write(objPlayer2.Top)
-        Loop
+        bw.Write("P")
+        bw.Write(objPlayer2.Top)
     End Sub
     Private Sub receivePosition()
         Dim message As String
@@ -48,6 +44,10 @@ Public Class frmJoin
             message = br.ReadString()
             If message = "P" Then
                 otherPlayersTop = br.ReadUInt16
+            ElseIf message = "BT" Then
+                objBall.Top = br.ReadUInt16
+            ElseIf message = "BL" Then
+                objBall.Left = br.ReadUInt16
             End If
         Loop
     End Sub
@@ -56,6 +56,7 @@ Public Class frmJoin
         Do While True
             objPlayer1.SetBounds(objPlayer1.Left, otherPlayersTop, 15, 69)
             objPlayer2.SetBounds(objPlayer2.Left, objPlayer2.Top, 15, 69)
+            objBall.SetBounds(objBall.Left, objBall.Top, 13, 14)
         Loop
     End Sub
 

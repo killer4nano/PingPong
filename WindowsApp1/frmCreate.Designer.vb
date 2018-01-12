@@ -38,12 +38,11 @@ Partial Class frmCreate
         '
         'objPlayer1
         '
-        Me.objPlayer1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.objPlayer1.BackColor = System.Drawing.SystemColors.Highlight
         Me.objPlayer1.Location = New System.Drawing.Point(12, 204)
         Me.objPlayer1.Name = "objPlayer1"
         Me.objPlayer1.Size = New System.Drawing.Size(15, 69)
         Me.objPlayer1.TabIndex = 3
-        Me.objPlayer1.Text = "Label1"
         '
         'objBall
         '
@@ -64,7 +63,7 @@ Partial Class frmCreate
         Me.MaximumSize = New System.Drawing.Size(734, 516)
         Me.MinimumSize = New System.Drawing.Size(734, 516)
         Me.Name = "frmCreate"
-        Me.Text = "Form1"
+        Me.Text = "Host : Ping Pong"
         Me.ResumeLayout(False)
 
     End Sub

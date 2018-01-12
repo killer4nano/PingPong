@@ -13,7 +13,6 @@ Public Class frmCreate
     Dim ip As String
     Private connectionThread As Thread
     Private render As Thread
-    Private sendingData As Thread
     Private receivingData As Thread
     Dim otherPlayersTop As Integer
     Dim ballXVelocity As Integer
@@ -23,14 +22,14 @@ Public Class frmCreate
 
         Dim host As String = System.Net.Dns.GetHostName()
         ip = System.Net.Dns.GetHostByName(host).AddressList(0).ToString()
+        ipAddress = Dns.GetHostByName(host).AddressList(0)
         otherPlayersTop = objPlayer2.Top
         MsgBox("Give this Ip to your friend " + ip)
         connectionThread = New Thread(AddressOf connect)
         connectionThread.Start()
         ballXVelocity = -2
         ballYVelocity = 1
-        render = New Thread(AddressOf renderG)
-        render.Start()
+
 
     End Sub
     Private Sub frmCreate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -45,10 +44,12 @@ Public Class frmCreate
     End Sub
 
     Private Sub sendPosition()
-        Do While True
-            bw.Write("P")
-            bw.Write(objPlayer1.Top)
-        Loop
+        bw.Write("P")
+        bw.Write(objPlayer1.Top)
+        bw.Write("BT")
+        bw.Write(objBall.Top)
+        bw.Write("BL")
+        bw.Write(objBall.Left)
     End Sub
     Private Sub receivePosition()
         Dim message As String
@@ -63,7 +64,7 @@ Public Class frmCreate
         Do While True
             objPlayer1.SetBounds(objPlayer1.Left, objPlayer1.Top, 15, 69)
             objPlayer2.SetBounds(objPlayer2.Left, otherPlayersTop, 15, 69)
-            If ballSpeedCounter > 100000 Then
+            If ballSpeedCounter > 500 Then
                 objBall.SetBounds(objBall.Left + ballXVelocity, objBall.Top + ballYVelocity, 13, 14)
                 ballSpeedCounter = 0
             End If
@@ -87,19 +88,20 @@ Public Class frmCreate
                 ballYVelocity = 1
             End If
             ballSpeedCounter += 1
+            sendPosition()
 
         Loop
     End Sub
     Private Sub connect()
-        ipAddress = Dns.GetHostEntry(ip).AddressList(0)
+
         Dim listener As New TcpListener(ipAddress, 49552)
         listener.Start()
         connection = listener.AcceptTcpClient()
         bw = New IO.BinaryWriter(connection.GetStream())
         br = New IO.BinaryReader(connection.GetStream())
-        sendingData = New Thread(AddressOf sendPosition)
+        render = New Thread(AddressOf renderG)
+        render.Start()
         receivingData = New Thread(AddressOf receivePosition)
-        sendingData.Start()
         receivingData.Start()
     End Sub
 

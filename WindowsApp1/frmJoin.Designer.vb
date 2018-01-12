@@ -47,12 +47,12 @@ Partial Class frmJoin
         '
         'objPlayer2
         '
-        Me.objPlayer2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.objPlayer2.BackColor = System.Drawing.SystemColors.Highlight
+        Me.objPlayer2.Cursor = System.Windows.Forms.Cursors.SizeWE
         Me.objPlayer2.Location = New System.Drawing.Point(691, 204)
         Me.objPlayer2.Name = "objPlayer2"
         Me.objPlayer2.Size = New System.Drawing.Size(15, 69)
         Me.objPlayer2.TabIndex = 2
-        Me.objPlayer2.Text = "Label2"
         '
         'objBall
         '
@@ -74,7 +74,7 @@ Partial Class frmJoin
         Me.MaximumSize = New System.Drawing.Size(734, 516)
         Me.MinimumSize = New System.Drawing.Size(734, 516)
         Me.Name = "frmJoin"
-        Me.Text = "Form1"
+        Me.Text = "Player 2 : Ping Pong"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
