@@ -27,8 +27,8 @@ Public Class frmCreate
         MsgBox("Give this Ip to your friend " + ip)
         connectionThread = New Thread(AddressOf connect)
         connectionThread.Start()
-        ballXVelocity = 2
-        ballYVelocity = 0
+        ballXVelocity = -2
+        ballYVelocity = 1
         render = New Thread(AddressOf renderG)
         render.Start()
 
@@ -80,6 +80,11 @@ Public Class frmCreate
                     MsgBox("Player 2 Wins")
                 End If
 
+            End If
+            If objBall.Top > Me.Bounds.Height - 50 Then
+                ballYVelocity = -1
+            ElseIf objBall.Top < 0 Then
+                ballYVelocity = 1
             End If
             ballSpeedCounter += 1
 
