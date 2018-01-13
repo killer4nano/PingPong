@@ -81,7 +81,7 @@ Partial Class frmJoin
         '
         'objBall
         '
-        Me.objBall.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.objBall.BackColor = System.Drawing.Color.Red
         Me.objBall.Location = New System.Drawing.Point(367, 230)
         Me.objBall.Name = "objBall"
         Me.objBall.Size = New System.Drawing.Size(13, 14)
@@ -105,6 +105,7 @@ Partial Class frmJoin
         Me.Controls.Add(Me.lblPlayer2Score)
         Me.Controls.Add(Me.lblPlayer1Score)
         Me.Controls.Add(Me.playGround)
+        Me.KeyPreview = True
         Me.MaximumSize = New System.Drawing.Size(1004, 682)
         Me.MinimumSize = New System.Drawing.Size(734, 516)
         Me.Name = "frmJoin"

@@ -51,7 +51,7 @@ Partial Class frmCreate
         '
         'objBall
         '
-        Me.objBall.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.objBall.BackColor = System.Drawing.Color.Red
         Me.objBall.Location = New System.Drawing.Point(367, 230)
         Me.objBall.Name = "objBall"
         Me.objBall.Size = New System.Drawing.Size(13, 14)
