@@ -46,9 +46,9 @@ Public Class frmCreate
             ballYVelocity = (ballYVelocity * 2) * -1
             xSpeedMultPlayer1 += 1
         End If
-        If e.KeyCode = Keys.Down And Not (objPlayer1.Top > Me.MaximumSize.Height - 130) Then
+        If e.KeyCode = Keys.Down And Not (objPlayer1.Top > 425) Then
             objPlayer1.Top += 15
-        ElseIf e.KeyCode = Keys.Up And Not (objPlayer1.Top < 10) Then
+        ElseIf e.KeyCode = Keys.Up And Not (objPlayer1.Top < 25) Then
             objPlayer1.Top -= 15
         End If
     End Sub
@@ -89,8 +89,8 @@ Public Class frmCreate
             If objBall.Bounds.IntersectsWith(objPlayer1.Bounds) Then
                 ballXVelocity = 2 * xSpeedMultPlayer1
             End If
-            If objBall.Left > playGround.Bounds.Width - 30 Or objBall.Left < 0 Then
-                If objBall.Left > playGround.Bounds.Width - 30 Then
+            If objBall.Left > objPlayer2.Left Or objBall.Left < objPlayer1.Left Then
+                If objBall.Left > objPlayer2.Left Then
                     player1Points += 1
                     bw.Write("I")
                     updatePointsUI()
@@ -109,7 +109,7 @@ Public Class frmCreate
                 End If
 
             End If
-            If objBall.Top > playGround.Bounds.Height - 50 Or objBall.Top < 0 Then
+            If objBall.Top > playGround.Bounds.Height - 20 Or objBall.Top < 10 Then
                 ballYVelocity = ballYVelocity * -1
             End If
             ballSpeedCounter += 1
@@ -150,5 +150,6 @@ Public Class frmCreate
     Private Sub btnReady_Click(sender As Object, e As EventArgs) Handles btnReady.Click
         bw.Write("GO")
         btnReady.Visible = False
+        MyBase.Focus()
     End Sub
 End Class

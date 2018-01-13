@@ -105,6 +105,7 @@ Partial Class frmCreate
         Me.Controls.Add(Me.lblPlayer2Score)
         Me.Controls.Add(Me.lblPlayer1Score)
         Me.Controls.Add(Me.playGround)
+        Me.KeyPreview = True
         Me.MaximumSize = New System.Drawing.Size(1004, 682)
         Me.MinimumSize = New System.Drawing.Size(734, 516)
         Me.Name = "frmCreate"

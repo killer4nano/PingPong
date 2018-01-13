@@ -30,9 +30,9 @@ Public Class frmJoin
         If e.KeyCode = Keys.Space And objBall.Bounds.IntersectsWith(objPlayer2.Bounds) Then
             bw.Write("H")
         End If
-        If e.KeyCode = Keys.Down And Not (objPlayer2.Top > Me.MaximumSize.Height - 130) Then
+        If e.KeyCode = Keys.Down And Not (objPlayer2.Top > 425) Then
             objPlayer2.Top += 15
-        ElseIf e.KeyCode = Keys.Up And Not (objPlayer2.Top < 10) Then
+        ElseIf e.KeyCode = Keys.Up And Not (objPlayer2.Top < 25) Then
             objPlayer2.Top -= 15
         End If
         sendPosition()
@@ -99,5 +99,8 @@ Public Class frmJoin
     Private Sub btnReady_Click(sender As Object, e As EventArgs) Handles btnReady.Click
         btnReady.Visible = False
         bw.Write("GO")
+        MyBase.Focus()
     End Sub
+
+
 End Class
