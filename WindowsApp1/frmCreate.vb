@@ -129,10 +129,10 @@ Public Class frmCreate
         Dim rand As Integer = Math.Ceiling(Rnd() * 2)
         If rand = 1 Then
             ballYVelocity = -1
-            ballXVelocity = 1
+            ballXVelocity = 2
         Else
             ballYVelocity = 1
-            ballXVelocity = -1
+            ballXVelocity = -2
         End If
         xSpeedMultPlayer1 = 1
         xSpeedMultPlayer2 = 1
