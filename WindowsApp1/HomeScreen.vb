@@ -6,4 +6,8 @@
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
         frmCreate.Show()
     End Sub
+
+    Private Sub HomeScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
