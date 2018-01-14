@@ -142,7 +142,7 @@ Public Class ObjPwr1
         Do While pause = True Or btnReady.Visible = True
 
         Loop
-        powerUpTimer.Enabled = True
+
     End Sub
     Private Sub connect()
 
@@ -163,16 +163,18 @@ Public Class ObjPwr1
         bw.Write("GO")
         btnReady.Visible = False
         MyBase.Focus()
+        powerUpTimer.Enabled = True
     End Sub
 
 
-    
-   
+
+
     Private Sub powerUpTimer_Tick(sender As Object, e As EventArgs) Handles powerUpTimer.Tick
         If objPwrUp.Visible = True Then
             bw.Write("PWRD")
             objPwrUp.Visible = False
         Else
+
             showPowerUp()
 
         End If
@@ -195,6 +197,7 @@ Public Class ObjPwr1
         objPwrUp.Visible = True
         bw.Write("PWRX")
         bw.Write(objPwrUp.Left)
+        MsgBox(objPwrUp.Left)
         bw.Write("PWRY")
         bw.Write(objPwrUp.Top)
         bw.Write("PWRT")
