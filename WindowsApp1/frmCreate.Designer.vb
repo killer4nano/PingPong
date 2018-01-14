@@ -109,7 +109,7 @@ Partial Class ObjPwr1
         Me.MaximumSize = New System.Drawing.Size(1004, 682)
         Me.MinimumSize = New System.Drawing.Size(734, 516)
         Me.Name = "ObjPwr1"
-        Me.Text = "Host : Ping Pong"
+        Me.Text = "S"
         Me.playGround.ResumeLayout(False)
         Me.ResumeLayout(False)
 

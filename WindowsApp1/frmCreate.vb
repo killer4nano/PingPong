@@ -162,7 +162,6 @@ Public Class ObjPwr1
         bw.Write("GO")
         btnReady.Visible = False
         MyBase.Focus()
-        powerUpTimer.Enabled = True
     End Sub
 
 End Class
