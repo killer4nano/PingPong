@@ -4,6 +4,6 @@
     End Sub
 
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
-        frmCreate.Show()
+        ObjPwr1.Show()
     End Sub
 End Class

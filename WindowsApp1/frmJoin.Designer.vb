@@ -29,6 +29,7 @@ Partial Class frmJoin
         Me.objPlayer1 = New System.Windows.Forms.Label()
         Me.objBall = New System.Windows.Forms.Label()
         Me.objPlayer2 = New System.Windows.Forms.Label()
+        Me.objPwrUp = New System.Windows.Forms.Label()
         Me.playGround.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -62,6 +63,7 @@ Partial Class frmJoin
         '
         'playGround
         '
+        Me.playGround.Controls.Add(Me.objPwrUp)
         Me.playGround.Controls.Add(Me.objPlayer1)
         Me.playGround.Controls.Add(Me.objBall)
         Me.playGround.Controls.Add(Me.objPlayer2)
@@ -96,6 +98,15 @@ Partial Class frmJoin
         Me.objPlayer2.TabIndex = 4
         Me.objPlayer2.Text = "Label2"
         '
+        'objPwrUp
+        '
+        Me.objPwrUp.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.objPwrUp.Location = New System.Drawing.Point(338, 97)
+        Me.objPwrUp.Name = "objPwrUp"
+        Me.objPwrUp.Size = New System.Drawing.Size(56, 55)
+        Me.objPwrUp.TabIndex = 7
+        Me.objPwrUp.Visible = False
+        '
         'frmJoin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -122,4 +133,5 @@ Partial Class frmJoin
     Friend WithEvents objPlayer1 As Label
     Friend WithEvents objBall As Label
     Friend WithEvents objPlayer2 As Label
+    Friend WithEvents objPwrUp As System.Windows.Forms.Label
 End Class
