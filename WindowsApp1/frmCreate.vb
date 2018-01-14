@@ -126,6 +126,14 @@ Public Class frmCreate
         objPlayer2.SetBounds(742, 201, 15, 69)
         objPlayer1.SetBounds(6, 201, 15, 69)
         objBall.SetBounds(367, 230, 13, 14)
+        Dim rand As Integer = Math.Ceiling(Rnd() * 2)
+        If rand = 1 Then
+            ballYVelocity = -1
+        Else
+            ballYVelocity = 1
+        End If
+        xSpeedMultPlayer1 = 1
+        xSpeedMultPlayer2 = 1
     End Sub
     Private Sub pauseAndWaitForReady()
         Do While pause = True Or btnReady.Visible = True
