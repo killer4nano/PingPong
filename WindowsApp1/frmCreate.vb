@@ -4,7 +4,7 @@ Imports System.Net
 
 
 
-Public Class frmCreate
+Public Class ObjPwr1
 
     Dim connection As TcpClient
     Dim bw As IO.BinaryWriter
@@ -23,6 +23,7 @@ Public Class frmCreate
     Dim player1Points As Integer = 0
     Dim player2Points As Integer = 0
     Dim pause As Boolean = True
+    Dim currentPowerUp As Integer = 0
 
     Private Sub frmCreate_Loaded(sender As Object, e As EventArgs) Handles MyBase.Shown
 
@@ -129,10 +130,10 @@ Public Class frmCreate
         Dim rand As Integer = Math.Ceiling(Rnd() * 2)
         If rand = 1 Then
             ballYVelocity = -1
-            ballXVelocity = 2
+            ballXVelocity = 1
         Else
             ballYVelocity = 1
-            ballXVelocity = -2
+            ballXVelocity = -1
         End If
         xSpeedMultPlayer1 = 1
         xSpeedMultPlayer2 = 1
@@ -141,6 +142,7 @@ Public Class frmCreate
         Do While pause = True Or btnReady.Visible = True
 
         Loop
+        powerUpTimer.Enabled = True
     End Sub
     Private Sub connect()
 
@@ -161,5 +163,42 @@ Public Class frmCreate
         bw.Write("GO")
         btnReady.Visible = False
         MyBase.Focus()
+    End Sub
+
+
+
+
+    Private Sub powerUpTimer_Tick(sender As Object, e As EventArgs) Handles powerUpTimer.Tick
+        If objPwrUp.Visible = True Then
+            bw.Write("PWRD")
+            objPwrUp.Visible = False
+        Else
+            showPowerUp()
+
+        End If
+    End Sub
+
+    Private Sub showPowerUp()
+        Dim x, y As Integer
+        x = Math.Ceiling(((Rnd() * 413) + 16))
+        y = Math.Ceiling(((Rnd() * 567) + 89))
+        currentPowerUp = Math.Ceiling((Rnd() * 2) + 1)
+        If currentPowerUp = 1 Then
+            objPwrUp.BackColor = Color.Green
+        ElseIf currentPowerUp = 2 Then
+            objPwrUp.BackColor = Color.Red
+        Else
+            objPwrUp.BackColor = Color.Orange
+        End If
+        objPwrUp.Left = x
+        objPwrUp.Top = y
+        objPwrUp.Visible = True
+        bw.Write("PWRX")
+        bw.Write(objPwrUp.Left)
+        bw.Write("PWRY")
+        bw.Write(objPwrUp.Top)
+        bw.Write("PWRT")
+        bw.Write(currentPowerUp)
+
     End Sub
 End Class
