@@ -44,7 +44,6 @@ C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\bin\Debug\WindowsApp1.exe
 C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\bin\Debug\WindowsApp1.pdb
 C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\bin\Debug\WindowsApp1.xml
 C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\obj\Debug\Pong.vbprojResolveAssemblyReference.cache
-C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\obj\Debug\WindowsApp1.frmCreate.resources
 C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\obj\Debug\WindowsApp1.frmJoin.resources
 C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\obj\Debug\WindowsApp1.HomeScreen.resources
 C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
@@ -52,3 +51,4 @@ C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\obj\Debug\Pong.vbproj.Gener
 C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\obj\Debug\WindowsApp1.exe
 C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\obj\Debug\WindowsApp1.xml
 C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\n01187828\Source\Repos\pingpong\WindowsApp1\obj\Debug\WindowsApp1.ObjPwr1.resources

@@ -137,5 +137,23 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awfs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splosdfgsds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8-Bit-Mayhem.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8-Bit-Mayhem_1_.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
