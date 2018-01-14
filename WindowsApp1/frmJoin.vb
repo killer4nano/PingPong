@@ -70,6 +70,7 @@ Public Class frmJoin
                 objPwrUp.Visible = False
             ElseIf message = "PWRX" Then
                 objPwrUp.Left = br.ReadUInt16
+                MsgBox(objPwrUp.Left)
             ElseIf message = "PWRY" Then
                 objPwrUp.Top = br.ReadUInt16
             ElseIf message = "PWRT" Then
