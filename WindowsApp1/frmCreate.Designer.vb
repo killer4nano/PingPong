@@ -22,16 +22,13 @@ Partial Class ObjPwr1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.objPlayer2 = New System.Windows.Forms.Label()
         Me.objPlayer1 = New System.Windows.Forms.Label()
         Me.objBall = New System.Windows.Forms.Label()
         Me.playGround = New System.Windows.Forms.GroupBox()
-        Me.objPwrUp = New System.Windows.Forms.Label()
         Me.lblPlayer1Score = New System.Windows.Forms.Label()
         Me.lblPlayer2Score = New System.Windows.Forms.Label()
         Me.btnReady = New System.Windows.Forms.Button()
-        Me.powerUpTimer = New System.Windows.Forms.Timer(Me.components)
         Me.playGround.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -62,7 +59,6 @@ Partial Class ObjPwr1
         '
         'playGround
         '
-        Me.playGround.Controls.Add(Me.objPwrUp)
         Me.playGround.Controls.Add(Me.objPlayer1)
         Me.playGround.Controls.Add(Me.objBall)
         Me.playGround.Controls.Add(Me.objPlayer2)
@@ -71,15 +67,6 @@ Partial Class ObjPwr1
         Me.playGround.Size = New System.Drawing.Size(763, 497)
         Me.playGround.TabIndex = 6
         Me.playGround.TabStop = False
-        '
-        'objPwrUp
-        '
-        Me.objPwrUp.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.objPwrUp.Location = New System.Drawing.Point(656, 425)
-        Me.objPwrUp.Name = "objPwrUp"
-        Me.objPwrUp.Size = New System.Drawing.Size(56, 55)
-        Me.objPwrUp.TabIndex = 6
-        Me.objPwrUp.Visible = False
         '
         'lblPlayer1Score
         '
@@ -109,10 +96,6 @@ Partial Class ObjPwr1
         Me.btnReady.Text = "Ready!"
         Me.btnReady.UseVisualStyleBackColor = True
         '
-        'powerUpTimer
-        '
-        Me.powerUpTimer.Interval = 10000
-        '
         'ObjPwr1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -139,6 +122,4 @@ Partial Class ObjPwr1
     Friend WithEvents lblPlayer1Score As Label
     Friend WithEvents lblPlayer2Score As Label
     Friend WithEvents btnReady As Button
-    Friend WithEvents objPwrUp As System.Windows.Forms.Label
-    Friend WithEvents powerUpTimer As System.Windows.Forms.Timer
 End Class

@@ -66,27 +66,8 @@ Public Class frmJoin
                 pauseAndWaitForReady()
             ElseIf message = "HI" Then
                 pauseAndWaitForReady()
-            ElseIf message = "PWRD" Then
-                objPwrUp.Visible = False
-            ElseIf message = "PWRX" Then
-                objPwrUp.Left = br.ReadUInt16
-            ElseIf message = "PWRY" Then
-                objPwrUp.Top = br.ReadUInt16
-            ElseIf message = "PWRT" Then
-                currentPowerUp = br.ReadUInt16
-                showPowerUp()
             End If
         Loop
-    End Sub
-    Private Sub showPowerUp()
-        If currentPowerUp = 1 Then
-            objPwrUp.BackColor = Color.Green
-        ElseIf currentPowerUp = 2 Then
-            objPwrUp.BackColor = Color.Red
-        Else
-            objPwrUp.BackColor = Color.Orange
-        End If
-        objPwrUp.Visible = True
     End Sub
 
     Private Sub renderG()
