@@ -166,8 +166,8 @@ Public Class ObjPwr1
     End Sub
 
 
-    
-   
+
+
     Private Sub powerUpTimer_Tick(sender As Object, e As EventArgs) Handles powerUpTimer.Tick
         If objPwrUp.Visible = True Then
             bw.Write("PWRD")
