@@ -230,4 +230,12 @@ Public Class ObjPwr1
             Me.BackColor = Color.Green
         End If
     End Sub
+
+    Private Sub objBall_Click(sender As Object, e As EventArgs) Handles objBall.Click
+
+    End Sub
+
+    Private Sub playGround_Enter(sender As Object, e As EventArgs) Handles playGround.Enter
+
+    End Sub
 End Class

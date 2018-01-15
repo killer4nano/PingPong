@@ -45,7 +45,7 @@ Partial Class ObjPwr1
         '
         'objPlayer1
         '
-        Me.objPlayer1.BackColor = System.Drawing.SystemColors.Highlight
+        Me.objPlayer1.BackColor = System.Drawing.Color.Red
         Me.objPlayer1.Location = New System.Drawing.Point(6, 201)
         Me.objPlayer1.Name = "objPlayer1"
         Me.objPlayer1.Size = New System.Drawing.Size(15, 69)
@@ -53,7 +53,7 @@ Partial Class ObjPwr1
         '
         'objBall
         '
-        Me.objBall.BackColor = System.Drawing.Color.Red
+        Me.objBall.BackColor = System.Drawing.Color.Orange
         Me.objBall.Location = New System.Drawing.Point(367, 230)
         Me.objBall.Name = "objBall"
         Me.objBall.Size = New System.Drawing.Size(13, 14)
