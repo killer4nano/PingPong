@@ -22,6 +22,7 @@ Partial Class ObjPwr1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.objPlayer2 = New System.Windows.Forms.Label()
         Me.objPlayer1 = New System.Windows.Forms.Label()
         Me.objBall = New System.Windows.Forms.Label()
@@ -29,6 +30,7 @@ Partial Class ObjPwr1
         Me.lblPlayer1Score = New System.Windows.Forms.Label()
         Me.lblPlayer2Score = New System.Windows.Forms.Label()
         Me.btnReady = New System.Windows.Forms.Button()
+        Me.XTREME = New System.Windows.Forms.Timer(Me.components)
         Me.playGround.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -96,6 +98,9 @@ Partial Class ObjPwr1
         Me.btnReady.Text = "Ready!"
         Me.btnReady.UseVisualStyleBackColor = True
         '
+        'XTREME
+        '
+        '
         'ObjPwr1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -122,4 +127,5 @@ Partial Class ObjPwr1
     Friend WithEvents lblPlayer1Score As Label
     Friend WithEvents lblPlayer2Score As Label
     Friend WithEvents btnReady As Button
+    Friend WithEvents XTREME As System.Windows.Forms.Timer
 End Class

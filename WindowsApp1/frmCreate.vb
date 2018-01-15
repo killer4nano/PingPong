@@ -23,6 +23,9 @@ Public Class ObjPwr1
     Dim player1Points As Integer = 0
     Dim player2Points As Integer = 0
     Dim pause As Boolean = True
+    Dim player1PowerBar, player2PowerBar As Integer
+    Dim toggleCounter As Integer
+
 
     Private Sub frmCreate_Loaded(sender As Object, e As EventArgs) Handles MyBase.Shown
 
@@ -30,11 +33,14 @@ Public Class ObjPwr1
         ip = System.Net.Dns.GetHostByName(host).AddressList(0).ToString()
         ipAddress = Dns.GetHostByName(host).AddressList(0)
         otherPlayersTop = objPlayer2.Top
-        MsgBox("Give this Ip to your friend " + ip)
+        Me.BackColor = Color.Green
+        'MsgBox("Give this Ip to your friend " + ip)
         connectionThread = New Thread(AddressOf connect)
         connectionThread.Start()
         ballXVelocity = -2
         ballYVelocity = 1
+        player1PowerBar = 0
+        player2PowerBar = 0
 
 
     End Sub
@@ -77,18 +83,32 @@ Public Class ObjPwr1
     End Sub
     Private Sub renderG()
         Do While True
+            toggleCounter += 1
+            If (player1PowerBar >= 10 And toggleCounter > 1000) Then
+                toggleBackground()
+                toggleCounter = 0
+            End If
             objPlayer1.SetBounds(objPlayer1.Left, objPlayer1.Top, 15, 69)
             objPlayer2.SetBounds(objPlayer2.Left, otherPlayersTop, 15, 69)
+            If objBall.Bounds.IntersectsWith(objPlayer2.Bounds) Then
+                ballXVelocity = -2 * xSpeedMultPlayer2
+                If ballSpeedCounter > 500 Then
+                    addPower(False)
+                End If
+
+
+            End If
+            If objBall.Bounds.IntersectsWith(objPlayer1.Bounds) Then
+                ballXVelocity = 2 * xSpeedMultPlayer1
+                If ballSpeedCounter > 500 Then
+                    addPower(True)
+                End If
+            End If
             If ballSpeedCounter > 500 Then
                 objBall.SetBounds(objBall.Left + ballXVelocity, objBall.Top + ballYVelocity, 13, 14)
                 ballSpeedCounter = 0
             End If
-            If objBall.Bounds.IntersectsWith(objPlayer2.Bounds) Then
-                ballXVelocity = -2 * xSpeedMultPlayer2
-            End If
-            If objBall.Bounds.IntersectsWith(objPlayer1.Bounds) Then
-                ballXVelocity = 2 * xSpeedMultPlayer1
-            End If
+
             If objBall.Left > objPlayer2.Left Or objBall.Left < objPlayer1.Left Then
                 If objBall.Left > objPlayer2.Left Then
                     player1Points += 1
@@ -143,6 +163,45 @@ Public Class ObjPwr1
         Loop
 
     End Sub
+
+    Private Sub addPower(isPlayerOne As Boolean)
+
+        If player1PowerBar >= 10 Then
+            xSpeedMultPlayer1 += 1
+            ballYVelocity = (ballYVelocity * 2) * -1
+            player1PowerBar = 0
+        ElseIf player2PowerBar >= 10 Then
+            xSpeedMultPlayer2 += 1
+            ballYVelocity = (ballYVelocity * 2) * -1
+            player2PowerBar = 0
+        End If
+
+        Dim toAdd, midPoint As Integer
+
+        If isPlayerOne And player1PowerBar < 10 Then
+            midPoint = (objPlayer1.Top + 34)
+            toAdd = IIf(objBall.Top + 5 < midPoint + 10 And objBall.Top + 5 > midPoint - 10, 2, 1)
+            player1PowerBar += toAdd
+        ElseIf Not (isPlayerOne) And player2PowerBar < 10 Then
+            midPoint = (objPlayer2.Top + 34)
+            toAdd = IIf(objBall.Top + 5 < midPoint + 10 And objBall.Top + 5 > midPoint - 10, 2, 1)
+            player2PowerBar += toAdd
+            bw.Write("XO")
+        End If
+
+        If player2PowerBar >= 10 Then
+            bw.Write("X")
+        End If
+
+
+    End Sub
+    Private Sub toggleBackground()
+        If Me.BackColor = Color.Green Then
+            Me.BackColor = Color.Red
+        Else
+            Me.BackColor = Color.Green
+        End If
+    End Sub
     Private Sub connect()
 
         Dim listener As New TcpListener(ipAddress, 49552)
@@ -164,4 +223,11 @@ Public Class ObjPwr1
         MyBase.Focus()
     End Sub
 
+    Private Sub XTREME_Tick(sender As Object, e As EventArgs) Handles XTREME.Tick
+        If Me.BackColor = Color.Green Then
+            Me.BackColor = Color.Red
+        Else
+            Me.BackColor = Color.Green
+        End If
+    End Sub
 End Class
