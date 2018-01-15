@@ -215,9 +215,10 @@ Partial Class HomeScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(348, 366)
+        Me.ClientSize = New System.Drawing.Size(344, 369)
         Me.Controls.Add(Me.btnRules2)
         Me.Controls.Add(Me.txtRules)
         Me.Controls.Add(Me.btnCntrls)
