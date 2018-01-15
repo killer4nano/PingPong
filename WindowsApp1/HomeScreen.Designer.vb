@@ -35,6 +35,9 @@ Partial Class HomeScreen
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.btnCntrls = New System.Windows.Forms.Button()
+        Me.txtRules = New System.Windows.Forms.RichTextBox()
+        Me.btnRules2 = New System.Windows.Forms.Button()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,7 +87,7 @@ Partial Class HomeScreen
         '
         Me.TextBox1.BackColor = System.Drawing.Color.SandyBrown
         Me.TextBox1.Font = New System.Drawing.Font("Vineta BT", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.Transparent
+        Me.TextBox1.ForeColor = System.Drawing.Color.Khaki
         Me.TextBox1.Location = New System.Drawing.Point(-2, 65)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
@@ -172,13 +175,52 @@ Partial Class HomeScreen
         Me.PictureBox9.TabIndex = 12
         Me.PictureBox9.TabStop = False
         '
+        'btnCntrls
+        '
+        Me.btnCntrls.BackColor = System.Drawing.Color.Lavender
+        Me.btnCntrls.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCntrls.ForeColor = System.Drawing.Color.OliveDrab
+        Me.btnCntrls.Location = New System.Drawing.Point(124, 118)
+        Me.btnCntrls.Name = "btnCntrls"
+        Me.btnCntrls.Size = New System.Drawing.Size(107, 45)
+        Me.btnCntrls.TabIndex = 13
+        Me.btnCntrls.Text = "Rules"
+        Me.btnCntrls.UseVisualStyleBackColor = False
+        '
+        'txtRules
+        '
+        Me.txtRules.Cursor = System.Windows.Forms.Cursors.Default
+        Me.txtRules.Font = New System.Drawing.Font("Lucida Bright", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRules.Location = New System.Drawing.Point(12, 169)
+        Me.txtRules.Name = "txtRules"
+        Me.txtRules.ReadOnly = True
+        Me.txtRules.Size = New System.Drawing.Size(324, 189)
+        Me.txtRules.TabIndex = 15
+        Me.txtRules.Text = ""
+        Me.txtRules.Visible = False
+        '
+        'btnRules2
+        '
+        Me.btnRules2.BackColor = System.Drawing.Color.Lavender
+        Me.btnRules2.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRules2.ForeColor = System.Drawing.Color.OliveDrab
+        Me.btnRules2.Location = New System.Drawing.Point(124, 118)
+        Me.btnRules2.Name = "btnRules2"
+        Me.btnRules2.Size = New System.Drawing.Size(107, 45)
+        Me.btnRules2.TabIndex = 16
+        Me.btnRules2.Text = "Rules"
+        Me.btnRules2.UseVisualStyleBackColor = False
+        '
         'HomeScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(348, 371)
+        Me.ClientSize = New System.Drawing.Size(348, 366)
+        Me.Controls.Add(Me.btnRules2)
+        Me.Controls.Add(Me.txtRules)
+        Me.Controls.Add(Me.btnCntrls)
         Me.Controls.Add(Me.PictureBox9)
         Me.Controls.Add(Me.PictureBox8)
         Me.Controls.Add(Me.PictureBox7)
@@ -220,4 +262,7 @@ Partial Class HomeScreen
     Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox9 As System.Windows.Forms.PictureBox
+    Friend WithEvents btnCntrls As System.Windows.Forms.Button
+    Friend WithEvents txtRules As System.Windows.Forms.RichTextBox
+    Friend WithEvents btnRules2 As System.Windows.Forms.Button
 End Class

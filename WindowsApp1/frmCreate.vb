@@ -164,4 +164,15 @@ Public Class ObjPwr1
         MyBase.Focus()
     End Sub
 
+    Private Sub ProgressBar1_Click(sender As Object, e As EventArgs) Handles ProgressBar1.Click
+
+    End Sub
+
+    Private Sub lblPlayer1Score_Click(sender As Object, e As EventArgs) Handles lblPlayer1Score.Click
+
+    End Sub
+
+    Private Sub lblPlayer2Score_Click(sender As Object, e As EventArgs) Handles lblPlayer2Score.Click
+
+    End Sub
 End Class
