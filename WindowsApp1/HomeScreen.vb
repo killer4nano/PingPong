@@ -1,10 +1,12 @@
 ﻿Public Class HomeScreen
     Private Sub btnJoin_Click(sender As Object, e As EventArgs) Handles btnJoin.Click
         frmJoin.Show()
+        My.Computer.Audio.Stop()
     End Sub
 
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
-        frmCreate.show()
+        ObjPwr1.Show()
+        My.Computer.Audio.Stop()
     End Sub
 
     Private Sub HomeScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
