@@ -17,7 +17,7 @@
 
         txtRules.Text = "Use the UP and DOWN arrows to move your paddle" & vbCrLf & vbCrLf
         txtRules.Text += "Use Spacebar for a chance to speed up your shot" & vbCrLf & vbCrLf
-        txtRules.Text += "HOST = Blue Paddle" & vbCrLf
+        txtRules.Text += "HOST = Red Paddle" & vbCrLf
         txtRules.Text += "GUEST = Black Paddle" & vbCrLf & vbCrLf
         txtRules.Text += "Hitting the ball closer to the center of the paddle charges up your POWER METER" & vbCrLf & vbCrLf
         txtRules.Text += "Charge up your power meter for a POWER SHOT" & vbCrLf & vbCrLf
