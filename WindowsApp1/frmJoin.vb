@@ -14,9 +14,12 @@ Public Class frmJoin
     Dim player1Points As Integer = 0
     Dim player2Points As Integer = 0
     Dim pause As Boolean = True
+    Dim toggleCounter As Integer
     Dim currentPowerUp As Integer
+    Dim flicker As Boolean = False
 
     Private Sub frmJoin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.BackColor = Color.Green
         Control.CheckForIllegalCrossThreadCalls = False
         Dim hostIp As String
         hostIp = InputBox("What is the host IP?", "Connection", "")
@@ -66,12 +69,21 @@ Public Class frmJoin
                 pauseAndWaitForReady()
             ElseIf message = "HI" Then
                 pauseAndWaitForReady()
+            ElseIf message = "X" Then
+                flicker = True
+            ElseIf message = "XO" Then
+                flicker = False
             End If
         Loop
     End Sub
 
     Private Sub renderG()
         Do While True
+            toggleCounter += 1
+            If (flicker And toggleCounter > 1000) Then
+                toggleBackground()
+                toggleCounter = 0
+            End If
             objPlayer1.SetBounds(objPlayer1.Left, otherPlayersTop, 15, 69)
             objPlayer2.SetBounds(objPlayer2.Left, objPlayer2.Top, 15, 69)
             objBall.SetBounds(objBall.Left, objBall.Top, 13, 14)
@@ -97,6 +109,13 @@ Public Class frmJoin
         render = New Thread(AddressOf renderG)
         render.Start()
     End Sub
+    Private Sub toggleBackground()
+        If Me.BackColor = Color.Green Then
+            Me.BackColor = Color.Red
+        Else
+            Me.BackColor = Color.Green
+        End If
+    End Sub
 
     Private Sub btnReady_Click(sender As Object, e As EventArgs) Handles btnReady.Click
         btnReady.Visible = False
@@ -105,4 +124,11 @@ Public Class frmJoin
     End Sub
 
 
+    Private Sub XTREME_Tick(sender As Object, e As EventArgs)
+        If Me.BackColor = Color.Transparent Then
+            Me.BackColor = Color.Red
+        Else
+            Me.BackColor = Color.Transparent
+        End If
+    End Sub
 End Class

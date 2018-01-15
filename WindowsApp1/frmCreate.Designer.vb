@@ -22,6 +22,7 @@ Partial Class ObjPwr1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.objPlayer2 = New System.Windows.Forms.Label()
         Me.objPlayer1 = New System.Windows.Forms.Label()
         Me.objBall = New System.Windows.Forms.Label()
@@ -29,8 +30,7 @@ Partial Class ObjPwr1
         Me.lblPlayer1Score = New System.Windows.Forms.Label()
         Me.lblPlayer2Score = New System.Windows.Forms.Label()
         Me.btnReady = New System.Windows.Forms.Button()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.ProgressBar2 = New System.Windows.Forms.ProgressBar()
+        Me.XTREME = New System.Windows.Forms.Timer(Me.components)
         Me.playGround.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -64,7 +64,6 @@ Partial Class ObjPwr1
         Me.playGround.Controls.Add(Me.objPlayer1)
         Me.playGround.Controls.Add(Me.objBall)
         Me.playGround.Controls.Add(Me.objPlayer2)
-        Me.playGround.ForeColor = System.Drawing.Color.Gold
         Me.playGround.Location = New System.Drawing.Point(122, 104)
         Me.playGround.Name = "playGround"
         Me.playGround.Size = New System.Drawing.Size(763, 497)
@@ -74,7 +73,7 @@ Partial Class ObjPwr1
         'lblPlayer1Score
         '
         Me.lblPlayer1Score.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPlayer1Score.Location = New System.Drawing.Point(229, 75)
+        Me.lblPlayer1Score.Location = New System.Drawing.Point(209, 71)
         Me.lblPlayer1Score.Name = "lblPlayer1Score"
         Me.lblPlayer1Score.Size = New System.Drawing.Size(52, 30)
         Me.lblPlayer1Score.TabIndex = 7
@@ -83,7 +82,7 @@ Partial Class ObjPwr1
         'lblPlayer2Score
         '
         Me.lblPlayer2Score.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPlayer2Score.Location = New System.Drawing.Point(756, 75)
+        Me.lblPlayer2Score.Location = New System.Drawing.Point(743, 71)
         Me.lblPlayer2Score.Name = "lblPlayer2Score"
         Me.lblPlayer2Score.Size = New System.Drawing.Size(52, 30)
         Me.lblPlayer2Score.TabIndex = 8
@@ -91,38 +90,22 @@ Partial Class ObjPwr1
         '
         'btnReady
         '
-        Me.btnReady.BackColor = System.Drawing.Color.Red
-        Me.btnReady.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReady.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnReady.Location = New System.Drawing.Point(460, 67)
+        Me.btnReady.Location = New System.Drawing.Point(463, 71)
         Me.btnReady.Name = "btnReady"
-        Me.btnReady.Size = New System.Drawing.Size(85, 38)
+        Me.btnReady.Size = New System.Drawing.Size(75, 23)
         Me.btnReady.TabIndex = 9
         Me.btnReady.TabStop = False
         Me.btnReady.Text = "Ready!"
-        Me.btnReady.UseVisualStyleBackColor = False
+        Me.btnReady.UseVisualStyleBackColor = True
         '
-        'ProgressBar1
+        'XTREME
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(122, 75)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(101, 26)
-        Me.ProgressBar1.TabIndex = 10
-        '
-        'ProgressBar2
-        '
-        Me.ProgressBar2.Location = New System.Drawing.Point(785, 75)
-        Me.ProgressBar2.Name = "ProgressBar2"
-        Me.ProgressBar2.Size = New System.Drawing.Size(100, 26)
-        Me.ProgressBar2.TabIndex = 6
         '
         'ObjPwr1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(988, 643)
-        Me.Controls.Add(Me.ProgressBar2)
-        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.btnReady)
         Me.Controls.Add(Me.lblPlayer2Score)
         Me.Controls.Add(Me.lblPlayer1Score)
@@ -144,6 +127,5 @@ Partial Class ObjPwr1
     Friend WithEvents lblPlayer1Score As Label
     Friend WithEvents lblPlayer2Score As Label
     Friend WithEvents btnReady As Button
-    Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
-    Friend WithEvents ProgressBar2 As System.Windows.Forms.ProgressBar
+    Friend WithEvents XTREME As System.Windows.Forms.Timer
 End Class
