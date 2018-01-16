@@ -85,7 +85,7 @@ Partial Class HomeScreen
         '
         'TextBox1
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.SandyBrown
+        Me.TextBox1.BackColor = System.Drawing.Color.DarkOrange
         Me.TextBox1.Font = New System.Drawing.Font("Vineta BT", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.Khaki
         Me.TextBox1.Location = New System.Drawing.Point(-2, 65)
