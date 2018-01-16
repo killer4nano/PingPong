@@ -15,7 +15,9 @@
         txtRules.Hide()
         btnRules2.Hide()
 
-        txtRules.Text = "Use the UP and DOWN arrows to move your PADDLE" & vbCrLf & vbCrLf
+
+        txtRules.Text = "CREATE a game. Have your opponent JOIN your game" & vbCrLf & vbCrLf
+        txtRules.Text += "Use the UP and DOWN arrows to move your PADDLE" & vbCrLf & vbCrLf
         txtRules.Text += "Use SPACEBAR for a chance to speed up your shot" & vbCrLf & vbCrLf
         txtRules.Text += "HOST = BLUE" & vbCrLf
         txtRules.Text += "GUEST = BLACK" & vbCrLf & vbCrLf
@@ -25,73 +27,85 @@
 
         With txtRules
             txtRules.Focus()
-            txtRules.SelectionStart = 8
-            txtRules.SelectionLength = 2
-            txtRules.SelectionColor = Color.Red
-        End With
-        With txtRules
-            txtRules.Focus()
-            txtRules.SelectionStart = 15
-            txtRules.SelectionLength = 4
-            txtRules.SelectionColor = Color.Red
-        End With
-        With txtRules
-            txtRules.Focus()
-            txtRules.SelectionStart = 40
+            txtRules.SelectionStart = 0
             txtRules.SelectionLength = 6
             txtRules.SelectionColor = Color.Red
         End With
         With txtRules
             txtRules.Focus()
-            txtRules.SelectionStart = 52
+            txtRules.SelectionStart = 34
+            txtRules.SelectionLength = 4
+            txtRules.SelectionColor = Color.Red
+        End With
+        With txtRules
+            txtRules.Focus()
+            txtRules.SelectionStart = 58
+            txtRules.SelectionLength = 2
+            txtRules.SelectionColor = Color.Red
+        End With
+        With txtRules
+            txtRules.Focus()
+            txtRules.SelectionStart = 65
+            txtRules.SelectionLength = 4
+            txtRules.SelectionColor = Color.Red
+        End With
+        With txtRules
+            txtRules.Focus()
+            txtRules.SelectionStart = 90
+            txtRules.SelectionLength = 6
+            txtRules.SelectionColor = Color.Red
+        End With
+        With txtRules
+            txtRules.Focus()
+            txtRules.SelectionStart = 102
             txtRules.SelectionLength = 8
             txtRules.SelectionColor = Color.Red
         End With
         With txtRules
             txtRules.Focus()
-            txtRules.SelectionStart = 97
+            txtRules.SelectionStart = 147
             txtRules.SelectionLength = 4
             txtRules.SelectionColor = Color.Red
         End With
         With txtRules
             txtRules.Focus()
-            txtRules.SelectionStart = 104
+            txtRules.SelectionStart = 154
             txtRules.SelectionLength = 4
             txtRules.SelectionColor = Color.MediumBlue
         End With
         With txtRules
             txtRules.Focus()
-            txtRules.SelectionStart = 109
+            txtRules.SelectionStart = 159
             txtRules.SelectionLength = 5
             txtRules.SelectionColor = Color.Red
         End With
         With txtRules
             txtRules.Focus()
-            txtRules.SelectionStart = 117
+            txtRules.SelectionStart = 167
             txtRules.SelectionLength = 5
             txtRules.SelectionColor = Color.Black
         End With
         With txtRules
             txtRules.Focus()
-            txtRules.SelectionStart = 192
+            txtRules.SelectionStart = 242
             txtRules.SelectionLength = 11
             txtRules.SelectionColor = Color.Red
         End With
         With txtRules
             txtRules.Focus()
-            txtRules.SelectionStart = 237
+            txtRules.SelectionStart = 288
             txtRules.SelectionLength = 11
             txtRules.SelectionColor = Color.Red
         End With
         With txtRules
             txtRules.Focus()
-            txtRules.SelectionStart = 255
+            txtRules.SelectionStart = 305
             txtRules.SelectionLength = 4
             txtRules.SelectionColor = Color.Red
         End With
         With txtRules
             txtRules.Focus()
-            txtRules.SelectionStart = 268
+            txtRules.SelectionStart = 318
             txtRules.SelectionLength = 3
             txtRules.SelectionColor = Color.Red
         End With

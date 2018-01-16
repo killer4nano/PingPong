@@ -168,7 +168,7 @@ Partial Class HomeScreen
         Me.txtRules.Location = New System.Drawing.Point(12, 169)
         Me.txtRules.Name = "txtRules"
         Me.txtRules.ReadOnly = True
-        Me.txtRules.Size = New System.Drawing.Size(324, 188)
+        Me.txtRules.Size = New System.Drawing.Size(324, 220)
         Me.txtRules.TabIndex = 15
         Me.txtRules.Text = ""
         Me.txtRules.Visible = False
@@ -236,7 +236,7 @@ Partial Class HomeScreen
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(344, 369)
+        Me.ClientSize = New System.Drawing.Size(344, 396)
         Me.Controls.Add(Me.txtRules)
         Me.Controls.Add(Me.btnRules2)
         Me.Controls.Add(Me.btnCntrls)
