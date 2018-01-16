@@ -32,12 +32,13 @@ Partial Class HomeScreen
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.btnCntrls = New System.Windows.Forms.Button()
         Me.txtRules = New System.Windows.Forms.RichTextBox()
         Me.btnRules2 = New System.Windows.Forms.Button()
+        Me.txtNames = New System.Windows.Forms.TextBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,11 +87,13 @@ Partial Class HomeScreen
         'TextBox1
         '
         Me.TextBox1.BackColor = System.Drawing.Color.DarkOrange
+        Me.TextBox1.Cursor = System.Windows.Forms.Cursors.Default
         Me.TextBox1.Font = New System.Drawing.Font("Vineta BT", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.Khaki
         Me.TextBox1.Location = New System.Drawing.Point(-2, 65)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(352, 36)
         Me.TextBox1.TabIndex = 4
         Me.TextBox1.Text = " ExXxtreme PONG"
@@ -145,36 +148,6 @@ Partial Class HomeScreen
         Me.PictureBox6.TabIndex = 9
         Me.PictureBox6.TabStop = False
         '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(-60, -13)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(107, 45)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 10
-        Me.PictureBox7.TabStop = False
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
-        Me.PictureBox8.Location = New System.Drawing.Point(124, -13)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(107, 45)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 11
-        Me.PictureBox8.TabStop = False
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
-        Me.PictureBox9.Location = New System.Drawing.Point(296, -13)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(107, 45)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox9.TabIndex = 12
-        Me.PictureBox9.TabStop = False
-        '
         'btnCntrls
         '
         Me.btnCntrls.BackColor = System.Drawing.Color.Lavender
@@ -191,10 +164,11 @@ Partial Class HomeScreen
         '
         Me.txtRules.Cursor = System.Windows.Forms.Cursors.Default
         Me.txtRules.Font = New System.Drawing.Font("Lucida Bright", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRules.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txtRules.Location = New System.Drawing.Point(12, 169)
         Me.txtRules.Name = "txtRules"
         Me.txtRules.ReadOnly = True
-        Me.txtRules.Size = New System.Drawing.Size(324, 189)
+        Me.txtRules.Size = New System.Drawing.Size(324, 188)
         Me.txtRules.TabIndex = 15
         Me.txtRules.Text = ""
         Me.txtRules.Visible = False
@@ -211,6 +185,50 @@ Partial Class HomeScreen
         Me.btnRules2.Text = "Rules"
         Me.btnRules2.UseVisualStyleBackColor = False
         '
+        'txtNames
+        '
+        Me.txtNames.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.txtNames.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.txtNames.Font = New System.Drawing.Font("Lucida Console", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNames.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.txtNames.Location = New System.Drawing.Point(-2, -1)
+        Me.txtNames.Multiline = True
+        Me.txtNames.Name = "txtNames"
+        Me.txtNames.ReadOnly = True
+        Me.txtNames.Size = New System.Drawing.Size(352, 24)
+        Me.txtNames.TabIndex = 17
+        Me.txtNames.Text = "  Created By: Ali, Ethan & Seaton"
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(296, -22)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(107, 45)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 18
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
+        Me.PictureBox8.Location = New System.Drawing.Point(124, -22)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(107, 45)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 19
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
+        Me.PictureBox9.Location = New System.Drawing.Point(-60, -22)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(107, 45)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 20
+        Me.PictureBox9.TabStop = False
+        '
         'HomeScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -222,18 +240,19 @@ Partial Class HomeScreen
         Me.Controls.Add(Me.btnRules2)
         Me.Controls.Add(Me.txtRules)
         Me.Controls.Add(Me.btnCntrls)
-        Me.Controls.Add(Me.PictureBox9)
-        Me.Controls.Add(Me.PictureBox8)
-        Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnJoin)
         Me.Controls.Add(Me.btnCreate)
         Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.txtNames)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.PictureBox7)
+        Me.Controls.Add(Me.PictureBox8)
+        Me.Controls.Add(Me.PictureBox9)
         Me.Name = "HomeScreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ping Pong"
@@ -260,10 +279,11 @@ Partial Class HomeScreen
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox6 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox9 As System.Windows.Forms.PictureBox
     Friend WithEvents btnCntrls As System.Windows.Forms.Button
     Friend WithEvents txtRules As System.Windows.Forms.RichTextBox
     Friend WithEvents btnRules2 As System.Windows.Forms.Button
+    Friend WithEvents txtNames As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox9 As System.Windows.Forms.PictureBox
 End Class
