@@ -115,7 +115,7 @@ Partial Class ObjPwr1
         Me.MinimumSize = New System.Drawing.Size(734, 516)
         Me.Name = "ObjPwr1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "S"
+        Me.Text = "Host : Ping Pong"
         Me.playGround.ResumeLayout(False)
         Me.ResumeLayout(False)
 

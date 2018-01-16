@@ -197,7 +197,7 @@ Partial Class HomeScreen
         Me.txtNames.ReadOnly = True
         Me.txtNames.Size = New System.Drawing.Size(352, 24)
         Me.txtNames.TabIndex = 17
-        Me.txtNames.Text = "  Created By: Ali, Ethan & Seaton"
+        Me.txtNames.Text = " Created By : Ali, Ethan & Seaton"
         '
         'PictureBox7
         '
@@ -237,8 +237,8 @@ Partial Class HomeScreen
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(344, 369)
-        Me.Controls.Add(Me.btnRules2)
         Me.Controls.Add(Me.txtRules)
+        Me.Controls.Add(Me.btnRules2)
         Me.Controls.Add(Me.btnCntrls)
         Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.PictureBox5)
