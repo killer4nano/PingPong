@@ -109,6 +109,7 @@ Partial Class frmJoin
         Me.MaximumSize = New System.Drawing.Size(1004, 682)
         Me.MinimumSize = New System.Drawing.Size(734, 516)
         Me.Name = "frmJoin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Player 2 : Ping Pong"
         Me.playGround.ResumeLayout(False)
         Me.ResumeLayout(False)
