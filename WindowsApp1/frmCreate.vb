@@ -34,7 +34,7 @@ Public Class ObjPwr1
         ipAddress = Dns.GetHostByName(host).AddressList(0)
         otherPlayersTop = objPlayer2.Top
         Me.BackColor = Color.Green
-        'MsgBox("Give this Ip to your friend " + ip)
+        MsgBox("Give this Ip to your 'friend' " + ip)
         connectionThread = New Thread(AddressOf connect)
         connectionThread.Start()
         ballXVelocity = -2
