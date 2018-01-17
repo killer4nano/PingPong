@@ -65,3 +65,17 @@ C:\Users\n01184117\Source\Repos\pingpong\WindowsApp1\obj\Debug\WindowsApp1.frmJo
 C:\Users\n01184117\Source\Repos\pingpong\WindowsApp1\obj\Debug\WindowsApp1.HomeScreen.resources
 C:\Users\n01184117\Source\Repos\pingpong\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
 C:\Users\n01184117\Source\Repos\pingpong\WindowsApp1\obj\Debug\Pong.vbproj.GenerateResource.Cache
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\obj\Debug\Pong.vbprojResolveAssemblyReference.cache
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\obj\Debug\WindowsApp1.ObjPwr1.resources
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\obj\Debug\WindowsApp1.frmJoin.resources
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\obj\Debug\WindowsApp1.HomeScreen.resources
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\obj\Debug\Pong.vbproj.GenerateResource.Cache
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\obj\Debug\Pong.vbproj.CoreCompileInputs.cache
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\kille\Source\Repos\PingPong5\WindowsApp1\obj\Debug\WindowsApp1.pdb
