@@ -3,6 +3,7 @@ Imports System.Net.Sockets
 Imports System.Net
 
 Public Class frmJoin
+    'Variable Decleration
     Dim connection As TcpClient
     Dim bw As IO.BinaryWriter
     Dim br As IO.BinaryReader
@@ -17,21 +18,27 @@ Public Class frmJoin
     Dim toggleCounter As Integer
     Dim currentPowerUp As Integer
     Dim flicker As Boolean = False
-
+    'Loading form
     Private Sub frmJoin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.BackColor = Color.Green
+        'Making sure threads can make changes to form
         Control.CheckForIllegalCrossThreadCalls = False
         Dim hostIp As String
+        'requesting host ip
         hostIp = InputBox("What is the host IP?", "Connection", "")
         connection = New TcpClient
         connection.Connect(hostIp, 49552)
+        'connection success
+        'setting up writing and reading of stream
         bw = New IO.BinaryWriter(connection.GetStream())
         br = New IO.BinaryReader(connection.GetStream())
         otherPlayersTop = objPlayer1.Top
         receivingData = New Thread(AddressOf receivePosition)
         receivingData.Start()
     End Sub
+
     Private Sub frmJoin_KeyPress(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        'Key  presses and updating host about button presses.
         If e.KeyCode = Keys.Space And objBall.Bounds.IntersectsWith(objPlayer2.Bounds) Then
             Try
 
@@ -48,6 +55,7 @@ Public Class frmJoin
         sendPosition()
     End Sub
     Private Sub sendPosition()
+        'sending the position of your paddle to the host
         Try
 
             bw.Write("P")
@@ -57,6 +65,7 @@ Public Class frmJoin
         End Try
     End Sub
     Private Sub receivePosition()
+        'receiving points and updates from host
         Dim message As String
         Do While True
             message = br.ReadString()
@@ -89,8 +98,10 @@ Public Class frmJoin
     End Sub
 
     Private Sub renderG()
+        'much simpler render thread
         Do While True
             toggleCounter += 1
+            'flicker incase the power up is available  with larger buffer because the loop has alot less to do
             If (flicker And toggleCounter > 5000000) Then
                 toggleBackground()
                 toggleCounter = 0
@@ -104,15 +115,18 @@ Public Class frmJoin
         Loop
     End Sub
     Private Sub updatePointsUI()
+        'updating points
         lblPlayer1Score.Text = player1Points
-        lblPlayer2Score.text = player2Points
+        lblPlayer2Score.Text = player2Points
     End Sub
     Private Sub resetPosition()
+        'resetting paddle positions after points.
         objPlayer2.SetBounds(742, 201, 15, 69)
         objPlayer1.SetBounds(6, 201, 15, 69)
         objBall.SetBounds(367, 230, 13, 14)
     End Sub
     Private Sub pauseAndWaitForReady()
+        'waiting till the other player and you are ready to start
         Dim message As String
         Do While Not (message = "GO")
             message = br.ReadString
@@ -124,6 +138,7 @@ Public Class frmJoin
         render.Start()
     End Sub
     Private Sub toggleBackground()
+        'make the screen flicker incase of power up
         If Me.BackColor = Color.Green Then
             Me.BackColor = Color.Red
         Else
@@ -132,17 +147,10 @@ Public Class frmJoin
     End Sub
 
     Private Sub btnReady_Click(sender As Object, e As EventArgs) Handles btnReady.Click
+        'inform player 1 of player 2 being ready
         btnReady.Visible = False
         bw.Write("GO")
         MyBase.Focus()
     End Sub
 
-
-    Private Sub XTREME_Tick(sender As Object, e As EventArgs)
-        If Me.BackColor = Color.Transparent Then
-            Me.BackColor = Color.Red
-        Else
-            Me.BackColor = Color.Transparent
-        End If
-    End Sub
 End Class
