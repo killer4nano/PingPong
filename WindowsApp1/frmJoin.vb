@@ -81,9 +81,12 @@ Public Class frmJoin
     Private Sub renderG()
         Do While True
             toggleCounter += 1
-            If (flicker And toggleCounter > 10000) Then
+            If (flicker And toggleCounter > 100000) Then
                 toggleBackground()
                 toggleCounter = 0
+            End If
+            If flicker = False Then
+                Me.BackColor = Color.Green
             End If
             objPlayer1.SetBounds(objPlayer1.Left, otherPlayersTop, 15, 69)
             objPlayer2.SetBounds(objPlayer2.Left, objPlayer2.Top, 15, 69)

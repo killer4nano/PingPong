@@ -84,10 +84,11 @@ Public Class ObjPwr1
     Private Sub renderG()
         Do While True
             toggleCounter += 1
-            If (player1PowerBar >= 10 And toggleCounter > 1000) Then
+            If (player1PowerBar >= 10 And toggleCounter > 10000) Then
                 toggleBackground()
                 toggleCounter = 0
-            Else
+            End If
+            If player1PowerBar < 10 Then
                 Me.BackColor = Color.Green
             End If
             objPlayer1.SetBounds(objPlayer1.Left, objPlayer1.Top, 15, 69)
@@ -164,11 +165,11 @@ Public Class ObjPwr1
 
     Private Sub addPower(isPlayerOne As Boolean)
 
-        If player1PowerBar >= 10 Then
+        If player1PowerBar >= 10 And isPlayerOne Then
             xSpeedMultPlayer1 += 1
             ballYVelocity = (ballYVelocity * 2) * -1
             player1PowerBar = 0
-        ElseIf player2PowerBar >= 10 Then
+        ElseIf player2PowerBar >= 10 And Not isPlayerOne Then
             xSpeedMultPlayer2 += 1
             ballYVelocity = (ballYVelocity * 2) * -1
             player2PowerBar = 0
@@ -203,9 +204,11 @@ Public Class ObjPwr1
 
         Dim listener As New TcpListener(ipAddress, 49552)
         listener.Start()
+        MsgBox("Don't press the ready button until prompted!")
         connection = listener.AcceptTcpClient()
         bw = New IO.BinaryWriter(connection.GetStream())
         br = New IO.BinaryReader(connection.GetStream())
+        MsgBox("Ok ready up your friend has joined!")
         receivingData = New Thread(AddressOf receivePosition)
         receivingData.Start()
         bw.Write("HI")
