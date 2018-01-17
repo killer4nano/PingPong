@@ -73,6 +73,7 @@ Public Class frmJoin
                 flicker = True
             ElseIf message = "XO" Then
                 flicker = False
+                Me.BackColor = Color.Green
             End If
         Loop
     End Sub

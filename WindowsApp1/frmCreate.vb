@@ -87,6 +87,8 @@ Public Class ObjPwr1
             If (player1PowerBar >= 10 And toggleCounter > 1000) Then
                 toggleBackground()
                 toggleCounter = 0
+            Else
+                Me.BackColor = Color.Green
             End If
             objPlayer1.SetBounds(objPlayer1.Left, objPlayer1.Top, 15, 69)
             objPlayer2.SetBounds(objPlayer2.Left, otherPlayersTop, 15, 69)
@@ -174,6 +176,7 @@ Public Class ObjPwr1
             xSpeedMultPlayer2 += 1
             ballYVelocity = (ballYVelocity * 2) * -1
             player2PowerBar = 0
+            bw.Write("XO")
         End If
 
         Dim toAdd, midPoint As Integer
@@ -186,7 +189,6 @@ Public Class ObjPwr1
             midPoint = (objPlayer2.Top + 34)
             toAdd = IIf(objBall.Top + 5 < midPoint + 10 And objBall.Top + 5 > midPoint - 10, 2, 1)
             player2PowerBar += toAdd
-            bw.Write("XO")
         End If
 
         If player2PowerBar >= 10 Then
