@@ -80,7 +80,7 @@ Public Class frmJoin
     Private Sub renderG()
         Do While True
             toggleCounter += 1
-            If (flicker And toggleCounter > 1000) Then
+            If (flicker And toggleCounter > 10000) Then
                 toggleBackground()
                 toggleCounter = 0
             End If
