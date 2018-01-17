@@ -33,7 +33,12 @@ Public Class frmJoin
     End Sub
     Private Sub frmJoin_KeyPress(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Space And objBall.Bounds.IntersectsWith(objPlayer2.Bounds) Then
-            bw.Write("H")
+            Try
+
+                bw.Write("H")
+            Catch ex As Exception
+                MsgBox("The other guy left!")
+            End Try
         End If
         If e.KeyCode = Keys.Down And Not (objPlayer2.Top > 425) Then
             objPlayer2.Top += 15
@@ -43,8 +48,13 @@ Public Class frmJoin
         sendPosition()
     End Sub
     Private Sub sendPosition()
-        bw.Write("P")
-        bw.Write(objPlayer2.Top)
+        Try
+
+            bw.Write("P")
+            bw.Write(objPlayer2.Top)
+        Catch ex As Exception
+            MsgBox("The other guy left!")
+        End Try
     End Sub
     Private Sub receivePosition()
         Dim message As String

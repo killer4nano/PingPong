@@ -60,12 +60,17 @@ Public Class ObjPwr1
     End Sub
 
     Private Sub sendPosition()
-        bw.Write("P")
-        bw.Write(objPlayer1.Top)
-        bw.Write("BT")
-        bw.Write(objBall.Top)
-        bw.Write("BL")
-        bw.Write(objBall.Left)
+        Try
+
+            bw.Write("P")
+            bw.Write(objPlayer1.Top)
+            bw.Write("BT")
+            bw.Write(objBall.Top)
+            bw.Write("BL")
+            bw.Write(objBall.Left)
+        Catch ex As Exception
+            MsgBox("The other guy left!")
+        End Try
     End Sub
     Private Sub receivePosition()
         Dim message As String
@@ -115,14 +120,24 @@ Public Class ObjPwr1
             If objBall.Left > objPlayer2.Left Or objBall.Left < objPlayer1.Left Then
                 If objBall.Left > objPlayer2.Left Then
                     player1Points += 1
-                    bw.Write("I")
+                    Try
+
+                        bw.Write("I")
+                    Catch ex As Exception
+                        MsgBox("The other guy left!")
+                    End Try
                     updatePointsUI()
                     resetPosition()
                     btnReady.Visible = True
                     pause = True
                     pauseAndWaitForReady()
                 Else
-                    bw.Write("U")
+                    Try
+
+                        bw.Write("U")
+                    Catch ex As Exception
+                        MsgBox("The other guy left!")
+                    End Try
                     player2Points += 1
                     updatePointsUI()
                     resetPosition()
@@ -173,7 +188,12 @@ Public Class ObjPwr1
             xSpeedMultPlayer2 += 1
             ballYVelocity = (ballYVelocity * 2) * -1
             player2PowerBar = 0
-            bw.Write("XO")
+            Try
+
+                bw.Write("XO")
+            Catch ex As Exception
+                MsgBox("The other guy left!")
+            End Try
         End If
 
         Dim toAdd, midPoint As Integer
@@ -189,7 +209,12 @@ Public Class ObjPwr1
         End If
 
         If player2PowerBar >= 10 Then
-            bw.Write("X")
+            Try
+
+                bw.Write("X")
+            Catch ex As Exception
+                MsgBox("The other guy left!")
+            End Try
         End If
 
     End Sub
