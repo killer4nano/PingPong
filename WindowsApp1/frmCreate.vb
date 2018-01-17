@@ -136,10 +136,8 @@ Public Class ObjPwr1
             End If
             ballSpeedCounter += 1
             sendPosition()
-
         Loop
     End Sub
-
     Private Sub updatePointsUI()
         lblPlayer1Score.Text = player1Points
         lblPlayer2Score.text = player2Points
@@ -161,9 +159,7 @@ Public Class ObjPwr1
     End Sub
     Private Sub pauseAndWaitForReady()
         Do While pause = True Or btnReady.Visible = True
-
         Loop
-
     End Sub
 
     Private Sub addPower(isPlayerOne As Boolean)
@@ -194,7 +190,6 @@ Public Class ObjPwr1
         If player2PowerBar >= 10 Then
             bw.Write("X")
         End If
-
 
     End Sub
     Private Sub toggleBackground()

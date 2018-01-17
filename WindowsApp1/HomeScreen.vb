@@ -22,8 +22,7 @@
         txtRules.Text += "HOST = BLUE" & vbCrLf
         txtRules.Text += "GUEST = BLACK" & vbCrLf & vbCrLf
         txtRules.Text += "Hitting the ball closer to the center of the paddle charges up your POWER METER" & vbCrLf & vbCrLf
-        txtRules.Text += "Charge up your power meter for a POWER SHOT" & vbCrLf & vbCrLf
-        txtRules.Text += "Play PONG to the ExXxtreme!!!"
+        txtRules.Text += "Your SCREEN will flicker when your POWER SHOT is ready"
 
         With txtRules
             txtRules.Focus()
@@ -93,22 +92,18 @@
         End With
         With txtRules
             txtRules.Focus()
-            txtRules.SelectionStart = 288
+            txtRules.SelectionStart = 260
+            txtRules.SelectionLength = 6
+            txtRules.SelectionColor = Color.Red
+        End With
+        With txtRules
+            txtRules.Focus()
+            txtRules.SelectionStart = 290
             txtRules.SelectionLength = 11
             txtRules.SelectionColor = Color.Red
         End With
-        With txtRules
-            txtRules.Focus()
-            txtRules.SelectionStart = 305
-            txtRules.SelectionLength = 4
-            txtRules.SelectionColor = Color.Red
-        End With
-        With txtRules
-            txtRules.Focus()
-            txtRules.SelectionStart = 318
-            txtRules.SelectionLength = 3
-            txtRules.SelectionColor = Color.Red
-        End With
+
+
     End Sub
     
     Private Sub btnCntrls_Click(sender As Object, e As EventArgs) Handles btnCntrls.MouseDown
